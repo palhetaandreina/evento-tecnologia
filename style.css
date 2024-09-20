@@ -295,3 +295,29 @@ form button {
   margin: 0 auto;
   gap: 16px;
 }
+
+.speaker-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  color: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 403px;
+}
+
+.speaker-card > .content {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+}
+
+.speaker-card > .content > h4 {
+  margin: 0;
+}
+
+.speaker-card > figure {
+  max-width: 100%;
+  margin: 0;
+  height: 334px;
+}
