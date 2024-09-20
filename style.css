@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  font-family: 'Poppins', sans-serif;
+  --color-accent: #21adc0;
+  --color-bg: #101d27;
+  --color-text: #fff;
+  --color-primary: #1a2934;
+  --color-text-secundary: #ffffff4f;
+  --padding-large: 90px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button {
+  display: flex;
+  border: 0;
+  border-radius: 64px;
+  padding: 12px 32px;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: var(--color-accent);
+  color: #fff;
+  gap: 32px;
+}
+
+.icon {
+  font-size: 24px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+
+button.icon-button {
+  padding: 8px 8px 8px 16px;
+  align-items: center;
+}
+
+button > .icon {
+  background-color: #fff;
+  color: var(--color-accent);
+  border-radius: 32px;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
+  line-height: 27px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 100%;
+}
+
+.link {
+  color: var(--color-accent);
+}
+
+header {
+  padding: var(--padding-large);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header > .links {
+  flex: 1;
+}
+
+header > .links > nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+header > .links > nav > ul > li {
+  font-size: 14px;
+  display: flex;
+  align-content: center;
+}
+
+header > .links > nav > ul > li > div {
+  display: flex;
+  align-content: center;
+  gap: 4px;
+  padding: 12px 32px;
+  line-height: 24px;
+}
+
+header > .links > nav > ul > li > div > span.icon {
+  transform: rotate(90deg);
+}
+
+.header-paginas {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+main {
+  padding: var(--padding-large);
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  flex: 1;
+}
+
+section {
+  max-width: 100%;
+}
+
+aside {
+  width: 800px;
+  right: 0;
+}
+
+#content {
+  display: flex;
+}
+
+#content-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+#content-left > * {
+  margin: 0;
+}
+
+#content-right {
+  width: 60%;
+}
+
+.cards-conteiner {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 24px;
+  background-color: var(--color-primary);
+  border-radius: 16px;
+  min-width: 200px;
+  flex: 1;
+}
+
+.card > p {
+  color: var(--color-text-secundary);
+}
+
+@media (width <= 768px) {
+  :root {
+    --padding-large: 64px;
+  }
+
+  aside {
+    display: none;
+  }
+
+  main {
+    gap: 80px;
+  }
+}
+
+footer {
+  display: flex;
+  padding: var(--padding-large);
+  gap: 12px;
+  justify-content: space-evenly;
+  background-color: var(--color-primary);
+  flex-wrap: wrap;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: block;
+}
+
+li a {
+  text-decoration: none;
+  color: #b6cde1;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+#tamanho-tela {
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+form {
+  margin-top: 0.83em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-field input {
+  background-color: transparent;
+  border: none;
+  padding: 10px 12px;
+  border-bottom: 2px solid #fff;
+  color: var(--color-text);
+  font-size: 16px;
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 128px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.form-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.columns > *,
+.form-columns > * {
+  flex: 1;
+}
+
+.columns > *:nth-child(1) {
+  min-width: 300px;
+}
