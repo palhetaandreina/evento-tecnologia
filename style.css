@@ -125,6 +125,20 @@ main {
   flex: 1;
 }
 
+main.background {
+  background-image: url(assets/images/servers.png);
+  background-position: right top;
+  background-size: 600px 600px;
+  background-repeat: no-repeat;
+}
+
+main.background-home {
+  background-image: url(assets/images/servers.png);
+  background-position: right top;
+  background-size: 600px 600px;
+  background-repeat: no-repeat;
+}
+
 section {
   max-width: 100%;
 }
