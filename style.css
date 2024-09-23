@@ -10,6 +10,10 @@
   --padding-large: 90px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: var(--color-bg);
@@ -72,30 +76,26 @@ button > .icon {
   color: var(--color-accent);
 }
 
-header {
-  padding: var(--padding-large);
-  display: flex;
-  flex-wrap: wrap;
+header .links {
+  flex-grow: 1;
+  min-width: 300px;
+  max-width: 100%;
 }
 
-header > .links {
-  flex: 1;
-}
-
-header > .links > nav > ul {
+header .links > nav > ul {
   display: flex;
   justify-content: space-evenly;
   gap: 8px;
   flex-wrap: wrap;
 }
 
-header > .links > nav > ul > li {
+header .links > nav > ul > li {
   font-size: 14px;
   display: flex;
   align-content: center;
 }
 
-header > .links > nav > ul > li > div {
+header .links > nav > ul > li > div {
   display: flex;
   align-content: center;
   gap: 4px;
@@ -103,7 +103,7 @@ header > .links > nav > ul > li > div {
   line-height: 24px;
 }
 
-header > .links > nav > ul > li > div > span.icon {
+header .links > nav > ul > li > div > span.icon {
   transform: rotate(90deg);
 }
 
@@ -115,28 +115,6 @@ header > .links > nav > ul > li > div > span.icon {
 h1 {
   font-size: 42px;
   font-weight: 600;
-}
-
-main {
-  padding: var(--padding-large);
-  display: flex;
-  flex-direction: column;
-  gap: 160px;
-  flex: 1;
-}
-
-main.background {
-  background-image: url(assets/images/servers.png);
-  background-position: right top;
-  background-size: 600px 600px;
-  background-repeat: no-repeat;
-}
-
-main.background-home {
-  background-image: url(assets/images/servers.png);
-  background-position: right top;
-  background-size: 600px 600px;
-  background-repeat: no-repeat;
 }
 
 section {
@@ -185,27 +163,9 @@ aside {
   color: var(--color-text-secundary);
 }
 
-@media (width <= 768px) {
-  :root {
-    --padding-large: 64px;
-  }
-
-  aside {
-    display: none;
-  }
-
-  main {
-    gap: 80px;
-  }
-}
-
 footer {
   display: flex;
-  padding: var(--padding-large);
-  gap: 12px;
-  justify-content: space-evenly;
   background-color: var(--color-primary);
-  flex-wrap: wrap;
 }
 
 h3 {
@@ -240,6 +200,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  min-width: 300px;
 }
 
 .text-field {
@@ -266,8 +227,9 @@ form button {
 .columns {
   display: flex;
   flex-wrap: wrap;
-  gap: 128px;
-  max-width: 1440px;
+  gap: 96px;
+  justify-content: space-between;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -279,7 +241,7 @@ form button {
 
 .columns > *,
 .form-columns > * {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .columns > *:nth-child(1) {
@@ -320,4 +282,83 @@ form button {
   max-width: 100%;
   margin: 0;
   height: 334px;
+}
+
+main > .container,
+header > .container,
+footer > .container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+}
+
+header > .container {
+  padding: var(--padding-large);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+main > .container {
+  padding: var(--padding-large);
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+  flex: 1;
+}
+
+footer > .container {
+  padding: var(--padding-large);
+  gap: 12px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+footer > .container > section {
+  min-width: 300px;
+  max-width: 100%;
+  flex-grow: 1;
+}
+
+.background {
+  background-image: url(assets/images/servers.png);
+  background-position: right top;
+  background-size: 600px 600px;
+  background-repeat: no-repeat;
+  min-height: 600px;
+}
+
+.background-home {
+  background-image: url(assets/images/servers.png);
+  background-position: right top;
+  background-size: 600px 600px;
+  background-repeat: no-repeat;
+}
+
+@media (width <= 768px) {
+  :root {
+    --padding-large: 64px;
+  }
+
+  aside {
+    display: none;
+  }
+
+  main > .container {
+    gap: 80px;
+  }
+}
+
+@media (width <= 600px) {
+  :root {
+    --padding-large: 24px;
+  }
+
+  aside {
+    display: none;
+  }
+
+  main {
+    gap: 80px;
+  }
 }
